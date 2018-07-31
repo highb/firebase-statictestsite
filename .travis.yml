@@ -1,6 +1,8 @@
 language: node_js
+install:
+  - 'cd functions/; npm install'
 script:
-  - "cd functions/; npm test"
+  - 'cd functions/; npm test'
 deploy:
   provider: firebase
   token:
