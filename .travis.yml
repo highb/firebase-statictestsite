@@ -1,8 +1,8 @@
 language: node_js
 install:
-  - 'pushd functions/; npm install; popd'
+  - 'npm --prefix ./functions install'
 script:
-  - 'pushd functions/; npm test; popd'
+  - 'npm --prefix ./functions test'
 deploy:
   provider: firebase
   token:
