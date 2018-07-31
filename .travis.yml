@@ -2,6 +2,7 @@ language: node_js
 install:
   - 'npm --prefix ./functions install'
 script:
+  - 'npm --prefix ./functions lint'
   - 'npm --prefix ./functions test'
 deploy:
   provider: firebase
