@@ -1,9 +1,16 @@
 language: node_js
-install:
-  - 'npm --prefix ./functions install'
+before_script:
+  - npm run setup
+  - npm run build
+
 script:
-  - 'npm --prefix ./functions run lint'
-  - 'npm --prefix ./functions run test'
+  - npm --prefix ./functions run lint
+  - npm run test-only
+
+after_success:
+  - npm run typedoc
+  - npm pack
+
 deploy:
   provider: firebase
   token:
